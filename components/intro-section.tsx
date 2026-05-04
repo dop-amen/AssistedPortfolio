@@ -1,9 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { User } from "lucide-react";
 import { Young_Serif } from "next/font/google";
 import { ContainerTextFlip } from "@/components/ui/container-text-flip";
+import { useEffect, useState } from "react";
+
+
 
 export const youngSerif = Young_Serif({
   weight: "400",
@@ -11,6 +13,12 @@ export const youngSerif = Young_Serif({
 });
 
 export function IntroSection() {
+  const [mounted, setMounted] = useState(false)
+
+useEffect(() => {
+  setMounted(true)
+}, [])
+
   return (
     <section
       id="intro"
@@ -33,16 +41,18 @@ export function IntroSection() {
         </motion.div>
 
         {/* name */}
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           className={`text-xl lg:text-4xl text-[#e2e2e2] mb-2 ${youngSerif.className}`}
         >
-          <ContainerTextFlip
-      words={["Hello", "Hola","Salam", "Konichiwa", "Bonjour", "Ciao"]}
-    />, I&apos;m Amin
-        </motion.p>
+          {mounted && (
+  <ContainerTextFlip
+    words={["Hello", "Hola", "Salam", "Konichiwa", "Bonjour", "Ciao"]}
+  />
+)}, I&apos;m Amin
+        </motion.div>
 
         {/* Title */}
         <motion.h1
