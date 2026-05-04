@@ -1,7 +1,14 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { User } from "lucide-react"
+import { motion } from "framer-motion";
+import { User } from "lucide-react";
+import { Young_Serif } from "next/font/google";
+import { ContainerTextFlip } from "@/components/ui/container-text-flip";
+
+export const youngSerif = Young_Serif({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export function IntroSection() {
   return (
@@ -22,28 +29,37 @@ export function IntroSection() {
           transition={{ delay: 0.1 }}
           className="w-32 h-32 rounded-full border-2 border-border bg-secondary flex items-center justify-center mb-8 overflow-hidden"
         >
-          <User className="w-16 h-16 text-muted-foreground" />
+          <img src="/avatar.jpg" alt="Amin's Avatar" className="w-full h-full object-cover" />
         </motion.div>
 
-        {/* Name */}
-        <motion.h1
+        {/* name */}
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-4 tracking-tight"
+          className={`text-xl lg:text-4xl text-[#e2e2e2] mb-2 ${youngSerif.className}`}
         >
-          Hi, I&apos;m <span className="text-primary">Amin</span>
-        </motion.h1>
+          <ContainerTextFlip
+      words={["Hello", "Hola","Salam", "Konichiwa", "Bonjour", "Ciao"]}
+    />, I&apos;m Amin
+        </motion.p>
 
-        {/* Subtitle Badge */}
-        <motion.div
+        {/* Title */}
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="inline-flex items-center px-4 py-2 rounded-full bg-secondary border border-border text-sm font-medium text-muted-foreground mb-8"
+          className="text-5xl md:text-6xl lg:text-6xl font-black text-foreground mb-8 tracking-tight leading-tight "
         >
-          Frontend Developer
-        </motion.div>
+          <span
+            className="bg-linear-to-r from-[#bcfa60] via-[#22c540] to-[#34d399]
+    bg-clip-text text-transparent
+    drop-shadow-[0_0_15px_rgba(34,197,94,0.5)]"
+          >
+            Front
+          </span>
+          end Developer
+        </motion.h1>
 
         {/* Bio */}
         <motion.p
@@ -52,9 +68,7 @@ export function IntroSection() {
           transition={{ delay: 0.4 }}
           className="text-muted-foreground text-base md:text-lg leading-relaxed mb-10 max-w-md"
         >
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum.
+          UI obsessed. I care about user-friendly design that just feels right.
         </motion.p>
 
         {/* Buttons */}
@@ -62,25 +76,32 @@ export function IntroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="flex flex-col sm:flex-row items-center gap-4"
+          className="flex flex-row sm:flex-row items-center gap-4"
         >
           <a
-            href="/resume.pdf"
-            className="px-8 py-3 rounded-full bg-primary text-primary-foreground font-black transition-all duration-300 hover:brightness-125 hover:shadow-[0_0_20px_rgba(34,197,94,0.5)]">
-            Resume
+            href="/resume.pdf" target="_blank" rel="noopener noreferrer"
+            className="px-8 py-3 rounded-full bg-primary text-primary-foreground font-black 
+             flex items-center gap-2 
+             transition-all duration-300 hover:brightness-125 
+             hover:shadow-[0_0_20px_rgba(34,197,94,0.5)]"
+          >
+            <span>Resume</span>
+
           </a>
           <a
             href="#contact"
             onClick={(e) => {
-              e.preventDefault()
-              document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })
+              e.preventDefault();
+              document
+                .querySelector("#contact")
+                ?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="px-8 py-3 rounded-full border border-border text-foreground font-semibold hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
+            className="px-8 py-3 rounded-full border border-[#458f77] text-foreground font-semibold hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
           >
             Contact
           </a>
         </motion.div>
       </motion.div>
     </section>
-  )
+  );
 }

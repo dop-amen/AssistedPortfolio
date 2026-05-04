@@ -10,19 +10,19 @@
   --card-foreground: #ffffff;
   --popover: #0d1412;
   --popover-foreground: #ffffff;
-  --primary: #22c55e;
+  --primary: #00BC7D;
   --primary-foreground: #0a0f0d;
   --secondary: #1a2420;
   --secondary-foreground: #ffffff;
   --muted: #1a2420;
   --muted-foreground: #9ca3af;
-  --accent: #22c55e;
+  --accent: #00BC7D;
   --accent-foreground: #0a0f0d;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #1f2e29;
+  --border: #458f77;
   --input: #1a2420;
-  --ring: #22c55e;
+  --ring: #00BC7D;
   --radius: 0.75rem;
 }
 
@@ -117,3 +117,26 @@
 .direction-rtl > * {
   direction: ltr;
 }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+
+@theme inline {
+  --animate-aurora: aurora 60s linear infinite;
+  @keyframes aurora {
+    from {
+      background-position:
+        50% 50%,
+        50% 50%;
+    }
+    to {
+      background-position:
+        350% 50%,
+        350% 50%;
+    }
+  }
+}
+

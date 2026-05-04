@@ -7,6 +7,7 @@ import { ProjectsSection } from "@/components/projects-section"
 import { ContactSection } from "@/components/contact-section"
 import { SectionProvider } from "@/components/section-context"
 import { SectionObserver } from "@/components/section-observer"
+import { StarField } from "@/components/star-field"
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <main className="relative min-h-screen bg-background overflow-hidden transition-colors duration-[600ms]">
         {/* Animated Background */}
         <AnimatedBackground />
+        <StarField />
 
         {/* Fixed Sidebar (Right) */}
         <Sidebar />

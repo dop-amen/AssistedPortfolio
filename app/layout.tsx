@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
+
+
 const inter = Inter({ 
   subsets: ["latin"],
   variable: "--font-inter",
@@ -11,7 +13,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Amin | Frontend Developer',
   description: 'Frontend Developer portfolio showcasing web development projects and skills.',
-  generator: 'v0.app',
+  
   icons: {
     icon: [
       {

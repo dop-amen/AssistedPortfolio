@@ -183,7 +183,7 @@ export function Sidebar() {
           border: none;
           padding: 10px 22px;
           border-radius: 12px;
-          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+          font-family:  "Geist", sans-serif;
           font-size: 20px;
           font-weight: 900;
           letter-spacing: 0.01em;
@@ -246,6 +246,7 @@ export function Sidebar() {
             transform: translateX(-50%);
             height: auto;
             width: auto;
+            font-family:  "Geist", sans-serif;
             flex-direction: row;
             align-items: center;
             justify-content: center;
@@ -332,7 +333,7 @@ export function Sidebar() {
             <div className="glare" ref={glareRef} />
           </div>
 
-          <div className="nav-items">
+          <div className="nav-items ">
             <div className="active-pill" ref={pillRef} />
             {navItems.map((item, index) => (
               <button
