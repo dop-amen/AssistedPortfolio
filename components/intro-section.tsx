@@ -22,7 +22,7 @@ useEffect(() => {
   return (
     <section
       id="intro"
-      className="min-h-screen flex flex-col items-center justify-center px-8 py-20"
+      className="min-h-screen flex flex-col items-center justify-center px-8 py-20 md:py-16"
     >
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}

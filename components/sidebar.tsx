@@ -238,42 +238,44 @@ export function Sidebar() {
 
         /* ── MOBILE: horizontal bottom bar ── */
         @media (max-width: 767px) {
-          .sidebar {
-            right: auto;
-            top: auto;
-            bottom: 24px;
-            left: 50%;
-            transform: translateX(-50%);
-            height: auto;
-            width: auto;
-            font-family:  "Geist", sans-serif;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-          }
+  .sidebar {
+    right: auto;
+    top: auto;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: auto;
+    width: max-content;
+    font-family: "Geist", sans-serif;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+  }
+
 
           /* hide desktop social, show inside nav on mobile */
           .social-links {
             display: none;
           }
 
-          .liquid-nav {
-            flex-direction: row;
-            border-radius: 999px;
-            padding: 6px;
-            animation: fadeInUp 0.5s ease forwards;
-          }
+  .liquid-nav {
+    flex-direction: row;
+    border-radius: 999px;
+    padding: 5px;
+    animation: fadeInUp 0.5s ease forwards;
+    width: max-content;
+  }
 
           .liquid-nav::before {
             height: 50%;
             border-radius: 999px 999px 24px 24px / 999px 999px 12px 12px;
           }
 
-          .nav-items {
-            flex-direction: row;
-            gap: 2px;
-          }
+  .nav-items {
+    flex-direction: row;
+    gap: 0;
+  }
 
           /* pill slides horizontally */
           .active-pill {
@@ -284,18 +286,19 @@ export function Sidebar() {
             height: auto !important;
           }
 
-          .nav-btn {
-            font-size: 13px;
-            padding: 10px 16px;
-          }
+  .nav-btn {
+    font-size: 16px;
+    padding: 9px 12px;
+    white-space: nowrap;
+  }
 
           /* social icons inside nav on mobile */
           .mobile-social {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            padding: 0 4px 0 2px;
-          }
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 0 2px;
+  }
 
           .mobile-divider {
             width: 1px;

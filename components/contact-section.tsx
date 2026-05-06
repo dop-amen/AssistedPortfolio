@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
 import { Send } from "lucide-react"
+import { SocialButton } from "./SocialButton"
 
 export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -16,7 +17,7 @@ export function ContactSection() {
     const formData = new FormData(form)
 
     try {
-      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      const response = await fetch("https://formspree.io/f/mdalyezn", {
         method: "POST",
         body: formData,
         headers: {
@@ -53,6 +54,29 @@ export function ContactSection() {
              bg-[linear-gradient(35deg,#ffdb3b_0%,#ff6600_50%,#8a3700_100%)]
              drop-shadow-[0_0_20px_rgba(255,102,0,0.5)]">Amin</span>
         </h2>
+
+
+        {/* Quick Contact Buttons */}
+<div className="flex justify-center gap-4 mb-6">
+  <SocialButton
+    href="https://wa.me/+8801711317608"
+    label="WhatsApp"
+    icon={<img src="https://cdn.simpleicons.org/whatsapp/25D366" style={{ width: 20, height: 20 }} />}
+  />
+  <SocialButton
+    href="https://m.me/aminul.islam.yes"
+    label="Messenger"
+    icon={<img src="https://cdn.simpleicons.org/messenger/0099FF" style={{ width: 20, height: 20 }} />}
+  />
+</div>
+
+{/* Divider */}
+<div className="flex items-center gap-3 mb-6">
+  <div className="flex-1 h-px bg-border" />
+  <span className="text-sm text-muted-foreground"> OR </span>
+  <div className="flex-1 h-px bg-border" />
+</div>
+
 
         {/* Contact Form Card */}
         <motion.div
