@@ -1,32 +1,37 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { url } from "inspector"
 import { ExternalLink } from "lucide-react"
 
 const projects = [
-  {
-    title: "E-Commerce Platform",
-    description: "A modern e-commerce solution with cart functionality and payment integration.",
-    techStack: ["React", "Next.js", "Stripe"],
-    image: null,
+   {
+    title: "Muchibari",
+    description: "Leather goods e-commerce store with product catalog and checkout.",
+    techStack: ["Next.js", "Supabase", "Tailwind"],
+    url: "https://muchibaribd.com/",
+    image: "/projects/mb.png"
   },
   {
-    title: "Dashboard App",
-    description: "Analytics dashboard with real-time data visualization and reporting.",
-    techStack: ["TypeScript", "Tailwind", "D3.js"],
-    image: null,
+  title: "FreeMove",
+  description: "Modern web app with a clean UI and smooth interactions.",
+  techStack: ["Next.js", "Tailwind", "Vercel"],
+  url: "https://freemove-gamma.vercel.app/",
+  image: "/projects/fm.png"
+},
+  {
+    title: "Cartly",
+    description: "Modern e-commerce storefront with cart and smooth shopping flow.",
+    techStack: ["Next.js", "Tailwind", "Vercel"],
+    url: "https://cartly-gamma-peach.vercel.app/",
+    image: "/projects/cartly.png"
   },
   {
-    title: "Social Media Clone",
-    description: "Full-stack social platform with real-time messaging and notifications.",
-    techStack: ["React", "Node.js", "Socket.io"],
-    image: null,
-  },
-  {
-    title: "Portfolio Generator",
-    description: "Dynamic portfolio builder with customizable themes and layouts.",
-    techStack: ["Next.js", "Prisma", "PostgreSQL"],
-    image: null,
+    title: "Housed",
+    description: "Real estate listing platform with property search and details.",
+    techStack: ["Next.js", "Tailwind", "Vercel"],
+    url: "https://housed-eta.vercel.app/",
+    image: "/projects/housed.png"
   },
 ]
 
@@ -56,20 +61,26 @@ export function ProjectsSection() {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group relative rounded-2xl bg-card border border-border p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(34,197,94,0.1)]"
+            <motion.a
+  key={project.title}
+  href={project.url}
+  target="_blank"
+  rel="noopener noreferrer"
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ delay: index * 0.1 }}
+  className="group relative block rounded-2xl bg-card border  border-border p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(34,197,94,0.1)]"
             >
               {/* Site Preview Placeholder */}
-              <div className="w-full h-36 rounded-xl bg-secondary border border-border mb-4 flex items-center justify-center overflow-hidden group-hover:border-primary/30 transition-colors">
-                <div className="text-muted-foreground text-sm font-medium">
-                  Site Preview
-                </div>
-              </div>
+              <div className="w-full h-36 rounded-xl bg-secondary border border-border mb-4 overflow-hidden group-hover:border-primary/30 transition-colors">
+  <img
+    src={project.image}
+    alt={project.title}
+    loading="lazy"
+    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+  />
+</div>
 
               {/* Tech Stack Tags */}
               <div className="flex flex-wrap gap-2 mb-3">
@@ -95,7 +106,7 @@ export function ProjectsSection() {
               <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
                 <ExternalLink className="w-5 h-5 text-primary" />
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </motion.div>
