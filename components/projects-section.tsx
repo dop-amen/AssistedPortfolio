@@ -21,7 +21,7 @@ const projects = [
 },
   {
     title: "Cartly",
-    description: "Modern e-commerce storefront with cart and smooth shopping flow.",
+    description: "SaaS platform to manage online stores with products, orders, and analytics.",
     techStack: ["Next.js", "Tailwind", "Vercel"],
     url: "https://cartly-gamma-peach.vercel.app/",
     image: "/projects/cartly.png"
